@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title> 포트폴리오 skill </title>
+  <style>
+    body, h2, ul{margin: 0;padding: 0;}
+    ul{list-style: none;}
+
+    #content{width: 1400px;margin: 50px auto;}
+    #content h2{font-size: 40px;text-align: center;margin-bottom: 50px;}
+    #skill{display: flex;flex-wrap: wrap;align-items: center;height: 400px;border: 1px solid #000;}
+    #skill li{width: calc(100% / 3);text-align: center;}
+    #skill li:nth-child(odd){background: pink;}
+    #skill li:nth-child(even){background: aqua;}
+    #skill li.wid100{width: 100%;}
+    #skill span{display: block;line-height: 2;}
+    #skill .subject{font-size: 30px;font-weight: 700;}
+    #skill .score{font-size: 25px;}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url : 'ajax32.json',
+        dataType : 'json',
+        success : function (result) {
+          var ele = '';
+          $.each(result, function (index, obj) { 
+            ele += '<li>';
+            ele += '<span class="subject">' + obj.subject + '</span>';
+            ele += '<span class="score">' + obj.score + '</span>';
+            ele += '</li>';
+          });
+          $('#skill').prepend(ele);
+        },
+        error : function (xhr) {
+          var ele = '';
+          ele += '<li class="wid100">';
+          ele += '<p>' + xhr.status + ': ' + xhr.statusText + '</p>';
+          ele += '</li>';
+          $('#skill').prepend(ele);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <section id="content">
+    <h2>skill</h2>
+    <ul id="skill">
+
+    </ul>
+  </section>
+</body>
+</html>

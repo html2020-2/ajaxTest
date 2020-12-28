@@ -1,0 +1,26 @@
+[
+  {
+    "subject" : "html5+css3",
+    "score" : 95
+  },
+  {
+    "subject" : "Javascript",
+    "score" : 60
+  },
+  {
+    "subject" : "jQuery",
+    "score" : 90
+  },
+  {
+    "subject" : "SASS",
+    "score" : 85
+  },
+  {
+    "subject" : "Bootstrap",
+    "score" : 80
+  },
+  {
+    "subject" : "Photoshop",
+    "score" : 90
+  }
+]
